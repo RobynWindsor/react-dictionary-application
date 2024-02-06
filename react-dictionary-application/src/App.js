@@ -1,8 +1,12 @@
+import React from 'react';
+import Dictionary from './Dictionary';
+
 function App() {
   return (
     <div className="App">
-      <header className="App-header"></header>
-      Hello
+      <div className="container">
+        <Dictionary />
+      </div>
     </div>
   );
 }
