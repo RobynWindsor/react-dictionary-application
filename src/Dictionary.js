@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import './Dictionary.css';
 
 export default function Dictionary() {
@@ -9,6 +10,9 @@ export default function Dictionary() {
     event.preventDefault();
     // This alert is using template literals, where we use the STATE which is keyword
     alert(`Searching for ${keyword}`); //Displays an alert with the keyword value
+
+    let apiUrl = 'https://api.dictionaryapi.dev/api/v2/entries/en/hello';
+    axios.get(apiUrl);
   }
 
   function handleKeywodChange(event) {
