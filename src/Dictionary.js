@@ -2,14 +2,17 @@ import React, { useState } from 'react';
 import './Dictionary.css';
 
 export default function Dictionary() {
+  //This is using the useSate hook. This is an array with two values, the current state value and a function to update the state.
   let [keyword, setkeyword] = useState('');
 
   function search(event) {
     event.preventDefault();
-    alert(`Searching for ${keyword}`);
+    // This alert is using template literals, where we use the STATE which is keyword
+    alert(`Searching for ${keyword}`); //Displays an alert with the keyword value
   }
 
   function handleKeywodChange(event) {
+    // The .target.value is found inside the object that is logged in console when searching for word. Value of word typed is found at target.value
     setkeyword(event.target.value);
   }
   return (
