@@ -6,13 +6,17 @@ export default function Dictionary() {
   //This is using the useSate hook. This is an array with two values, the current state value and a function to update the state.
   let [keyword, setkeyword] = useState('');
 
+  function handleResponse(response) {
+    console.log(response);
+  }
+
   function search(event) {
     event.preventDefault();
     // This alert is using template literals, where we use the STATE which is keyword
     alert(`Searching for ${keyword}`); //Displays an alert with the keyword value
 
-    let apiUrl = 'https://api.dictionaryapi.dev/api/v2/entries/en/hello';
-    axios.get(apiUrl);
+    let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/hello`;
+    axios.get(apiUrl).then(handleResponse);
   }
 
   function handleKeywodChange(event) {
