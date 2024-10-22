@@ -7,7 +7,7 @@ export default function Dictionary() {
   let [keyword, setkeyword] = useState('');
 
   function handleResponse(response) {
-    console.log(response);
+    console.log(response.data);
   }
 
   function search(event) {
@@ -15,8 +15,9 @@ export default function Dictionary() {
     // This alert is using template literals, where we use the STATE which is keyword
     alert(`Searching for ${keyword}`); //Displays an alert with the keyword value
 
-    let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/hello`;
+    let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${keyword}`;
     axios.get(apiUrl).then(handleResponse);
+    console.log(apiUrl);
   }
 
   function handleKeywodChange(event) {
