@@ -12,8 +12,6 @@ export default function Dictionary() {
 
   function search(event) {
     event.preventDefault();
-    // This alert is using template literals, where we use the STATE which is keyword
-    alert(`Searching for ${keyword}`); //Displays an alert with the keyword value
 
     let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${keyword}`;
     axios.get(apiUrl).then(handleResponse);
