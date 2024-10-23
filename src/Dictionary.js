@@ -8,6 +8,7 @@ export default function Dictionary() {
 
   function handleResponse(response) {
     console.log(response.data);
+    console.log(response.data[0].meaning);
   }
 
   function search(event) {
