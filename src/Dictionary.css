@@ -1,2 +1,4 @@
 .Dictionary {
+  display: flex;
+  justify-content: center;
 }
