@@ -9,7 +9,7 @@ export default function Dictionary() {
   function handleResponse(response) {
     console.log(response.data);
     // console log returns undefined
-    console.log(response.data[0].meaning);
+    console.log(response.data[0].meanings);
   }
 
   function search(event) {
@@ -18,7 +18,6 @@ export default function Dictionary() {
     // API Documentation : https://dictionaryapi.dev/
     let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${keyword}`;
     axios.get(apiUrl).then(handleResponse);
-    console.log(apiUrl);
   }
 
   function handleKeywodChange(event) {
