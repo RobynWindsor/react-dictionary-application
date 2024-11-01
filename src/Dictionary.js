@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import Results from './Results';
 import './Dictionary.css';
 
 export default function Dictionary() {
@@ -7,9 +8,7 @@ export default function Dictionary() {
   let [keyword, setkeyword] = useState('');
 
   function handleResponse(response) {
-    console.log(response.data);
-    // console log returns undefined
-    console.log(response.data[0].meanings);
+    console.log(response.data[0].meanings[0].definitions[0]);
   }
 
   function search(event) {
@@ -30,6 +29,7 @@ export default function Dictionary() {
         {/* COMMENT - The autoFocus attribute ensures that when the component is rendered, the input field is already selected and user can start typing, instead of the user manually clicking on the box to start typing */}
         <input type="search" autoFocus={true} />
       </form>
+      <Results />
     </div>
   );
 }
