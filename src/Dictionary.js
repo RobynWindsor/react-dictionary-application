@@ -6,7 +6,7 @@ import './Dictionary.css';
 export default function Dictionary() {
   //This is using the useSate hook. This is an array with two values, the current state value and a function to update the state.
   let [keyword, setkeyword] = useState('');
-  let [results, setResults] = useState({});
+  let [results, setResults] = useState(null);
 
   function handleResponse(response) {
     console.log(response.data[0].meanings[0].definitions[0]);
